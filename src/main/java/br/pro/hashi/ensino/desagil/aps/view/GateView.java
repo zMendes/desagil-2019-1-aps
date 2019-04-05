@@ -7,10 +7,9 @@ import br.pro.hashi.ensino.desagil.aps.model.Switch;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 public class GateView extends JPanel implements ActionListener {
-
     private final Gate gate;
-
 
     private final JCheckBox entrada1Box;
     private final JCheckBox entrada2Box;
@@ -32,7 +31,6 @@ public class GateView extends JPanel implements ActionListener {
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
         saidaBox.setEnabled(false);
-
         entrada1Box.addActionListener(this);
         entrada2Box.addActionListener(this);
 
@@ -46,7 +44,8 @@ public class GateView extends JPanel implements ActionListener {
 
             this.gate.connect(0, switch1);
             this.gate.connect(1, switch2);
-        } else {
+        }   
+          else {
             add(entradaLabel);
             add(entrada1Box);
             add(saidaLabel);
@@ -58,25 +57,24 @@ public class GateView extends JPanel implements ActionListener {
     }
 
     private void update() {
-
-
         if (entrada1Box.isSelected()) {
             switch1.turnOn();
-        }
+        } 
         else
-            {switch1.turnOff();}
-
+            {switch1.turnOff();
+        }
+        
         if (entrada2Box.isSelected()) {
-            switch2.turnOn();
+            switch2.turnOn(); 
         }
         else
-            {switch2.turnOff();}
-
-
+            {switch2.turnOff();
+        }
+        
         boolean saida = this.gate.read();
         saidaBox.setSelected(saida);
     }
-
+    
     @Override
     public void actionPerformed(ActionEvent e) {
     update();
