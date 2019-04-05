@@ -34,7 +34,6 @@ public class GateView extends JPanel implements ActionListener {
         entrada1Box.addActionListener(this);
         entrada2Box.addActionListener(this);
 
-
         if (gate.getInputSize() != 1) {
             add(entradaLabel);
             add(entrada1Box);
