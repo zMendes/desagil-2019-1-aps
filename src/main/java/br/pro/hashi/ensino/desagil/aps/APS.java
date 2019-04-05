@@ -1,4 +1,4 @@
-package br.pro.hashi.ensino.desagil.desmat;
+package br.pro.hashi.ensino.desagil.aps;
 
 import br.pro.hashi.ensino.desagil.aps.model.AndGate;
 import br.pro.hashi.ensino.desagil.aps.model.NandGate;
