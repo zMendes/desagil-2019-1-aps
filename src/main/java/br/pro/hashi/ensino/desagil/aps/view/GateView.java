@@ -115,17 +115,21 @@ public class GateView extends FixedPanel implements ItemListener, MouseListener 
     public void mouseClicked(MouseEvent e) {
         int x = e.getX();
         int y = e.getY();
+        Color temp;
         int point = (x - x0)*(x-x0) + (y - y0)* (y-y0);
         if (gate.read() ) {
             if (point <radius*radius) {
                 //pegando a cor nova
-                color = JColorChooser.showDialog(this, null, color);
-                if (color != null) {
-                    light.setR(color.getRed());
-                    light.setG(color.getGreen());
-                    light.setB(color.getBlue());
-                }
-                repaint();
+                temp= JColorChooser.showDialog(this, null, color);
+                try {
+                    light.setR(temp.getRed());
+                    light.setG(temp.getGreen());
+                    light.setB(temp.getBlue());
+                    repaint();
+                    update();
+                } catch (Exception ex){}
+
+
 
             }
         }
